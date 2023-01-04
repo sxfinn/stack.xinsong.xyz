@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='转载自：【教程】VScode中配置C语言/C&#43;&#43;运行环境_哔哩哔哩_bilibili
+下载编辑器VScode 官网：https://code.visualstudio.com/
+安装VScode（建议附加任务全部勾选）
+下载编译器MinGW并解压 官网页面：https://www.mingw-w64.org/
+下载页面：https://sourceforge.net/projects/mingw-w64/files/ -内置了iconv工具
+非官方下载页面：MinGW Distro - nuwen.net -此版本未内置iconv工具
+你可以进入官网自行寻找
+你也可以直接点击为你找好的下载页面
+下载页面中选择 x86_64-win32-seh 下载
+如果你因为网络环境限制无法下载
+不限速下载，请笑纳^-^：https://wwn.lanzouh.com/iLOip031ku6b 密码:1234
+在C盘中解压文件
+理论上你可以在任何地方解压，但注意路径不能包含中文，至于特殊字符请自行测试
+将MinGW添加至环境变量 进入mingw64下的bin文件夹，复制当前路径，Win &#43; i唤起系统设置，输入高级系统设置并进入，点击环境变量，选择path，编辑，新建，粘贴路径，按下三个确定
+配置VScode插件 打开VScode安装插件 Chinese 和 C/C&#43;&#43; ，等待安装完毕后重启VScode
+切换C/C&#43;&#43;插件至 1.8.4 版本（非必要，不过对于小白来说更方便，此版本运行即自动配置）
+因最新版本不会自动生成launch.json文件，给后续优化带来不便，故退回旧版本。
+运行代码 新建文件夹，修改为英文名称并进入，右键 通过Code打开 若在安装时未勾选相关选项，可能没有这个选项，请自行在VScode内操作打开文件夹
+新建一个文件，英文命名且扩展名为 .c
+编写相关代码
+1 2 3 4 5 6 7 8 9 #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; int main() { printf(&amp;#34;Hello World!\n&amp;#34;); printf(&amp;#34;你好世界！\n&amp;#34;); system(&amp;#34;pause&amp;#34;); // 防止运行后自动退出，需头文件stdlib.h return 0; } VScode菜单栏，点击运行，启动调试，稍等程序运行，输出结果在下方终端，上方调试面板，点击最右边的 橙色方框 停止程序运行'>
+<title>VSCode配置C-C&#43;&#43;环境</title>
+
+<link rel='canonical' href='https://stack.xinsong.xyz/p/vscode%E9%85%8D%E7%BD%AEc-c-%E7%8E%AF%E5%A2%83/'>
+
+<link rel="stylesheet" href="/scss/style.min.5be32ca3f6e1a997c75795c4359147cc6d4fbd34948c0acd51e31d237033978a.css"><meta property='og:title' content='VSCode配置C-C&#43;&#43;环境'>
+<meta property='og:description' content='转载自：【教程】VScode中配置C语言/C&#43;&#43;运行环境_哔哩哔哩_bilibili
+下载编辑器VScode 官网：https://code.visualstudio.com/
+安装VScode（建议附加任务全部勾选）
+下载编译器MinGW并解压 官网页面：https://www.mingw-w64.org/
+下载页面：https://sourceforge.net/projects/mingw-w64/files/ -内置了iconv工具
+非官方下载页面：MinGW Distro - nuwen.net -此版本未内置iconv工具
+你可以进入官网自行寻找
+你也可以直接点击为你找好的下载页面
+下载页面中选择 x86_64-win32-seh 下载
+如果你因为网络环境限制无法下载
+不限速下载，请笑纳^-^：https://wwn.lanzouh.com/iLOip031ku6b 密码:1234
+在C盘中解压文件
+理论上你可以在任何地方解压，但注意路径不能包含中文，至于特殊字符请自行测试
+将MinGW添加至环境变量 进入mingw64下的bin文件夹，复制当前路径，Win &#43; i唤起系统设置，输入高级系统设置并进入，点击环境变量，选择path，编辑，新建，粘贴路径，按下三个确定
+配置VScode插件 打开VScode安装插件 Chinese 和 C/C&#43;&#43; ，等待安装完毕后重启VScode
+切换C/C&#43;&#43;插件至 1.8.4 版本（非必要，不过对于小白来说更方便，此版本运行即自动配置）
+因最新版本不会自动生成launch.json文件，给后续优化带来不便，故退回旧版本。
+运行代码 新建文件夹，修改为英文名称并进入，右键 通过Code打开 若在安装时未勾选相关选项，可能没有这个选项，请自行在VScode内操作打开文件夹
+新建一个文件，英文命名且扩展名为 .c
+编写相关代码
+1 2 3 4 5 6 7 8 9 #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; int main() { printf(&amp;#34;Hello World!\n&amp;#34;); printf(&amp;#34;你好世界！\n&amp;#34;); system(&amp;#34;pause&amp;#34;); // 防止运行后自动退出，需头文件stdlib.h return 0; } VScode菜单栏，点击运行，启动调试，稍等程序运行，输出结果在下方终端，上方调试面板，点击最右边的 橙色方框 停止程序运行'>
+<meta property='og:url' content='https://stack.xinsong.xyz/p/vscode%E9%85%8D%E7%BD%AEc-c-%E7%8E%AF%E5%A2%83/'>
+<meta property='og:site_name' content='NcPhoton'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='环境搭建' /><meta property='article:tag' content='cpp' /><meta property='article:tag' content='c' /><meta property='article:tag' content='VSCode' /><meta property='article:published_time' content='2022-12-05T17:08:35&#43;00:00'/><meta property='article:modified_time' content='2022-12-05T17:08:35&#43;00:00'/>
+<meta name="twitter:title" content="VSCode配置C-C&#43;&#43;环境">
+<meta name="twitter:description" content="转载自：【教程】VScode中配置C语言/C&#43;&#43;运行环境_哔哩哔哩_bilibili
+下载编辑器VScode 官网：https://code.visualstudio.com/
+安装VScode（建议附加任务全部勾选）
+下载编译器MinGW并解压 官网页面：https://www.mingw-w64.org/
+下载页面：https://sourceforge.net/projects/mingw-w64/files/ -内置了iconv工具
+非官方下载页面：MinGW Distro - nuwen.net -此版本未内置iconv工具
+你可以进入官网自行寻找
+你也可以直接点击为你找好的下载页面
+下载页面中选择 x86_64-win32-seh 下载
+如果你因为网络环境限制无法下载
+不限速下载，请笑纳^-^：https://wwn.lanzouh.com/iLOip031ku6b 密码:1234
+在C盘中解压文件
+理论上你可以在任何地方解压，但注意路径不能包含中文，至于特殊字符请自行测试
+将MinGW添加至环境变量 进入mingw64下的bin文件夹，复制当前路径，Win &#43; i唤起系统设置，输入高级系统设置并进入，点击环境变量，选择path，编辑，新建，粘贴路径，按下三个确定
+配置VScode插件 打开VScode安装插件 Chinese 和 C/C&#43;&#43; ，等待安装完毕后重启VScode
+切换C/C&#43;&#43;插件至 1.8.4 版本（非必要，不过对于小白来说更方便，此版本运行即自动配置）
+因最新版本不会自动生成launch.json文件，给后续优化带来不便，故退回旧版本。
+运行代码 新建文件夹，修改为英文名称并进入，右键 通过Code打开 若在安装时未勾选相关选项，可能没有这个选项，请自行在VScode内操作打开文件夹
+新建一个文件，英文命名且扩展名为 .c
+编写相关代码
+1 2 3 4 5 6 7 8 9 #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;stdlib.h&amp;gt; int main() { printf(&amp;#34;Hello World!\n&amp;#34;); printf(&amp;#34;你好世界！\n&amp;#34;); system(&amp;#34;pause&amp;#34;); // 防止运行后自动退出，需头文件stdlib.h return 0; } VScode菜单栏，点击运行，启动调试，稍等程序运行，输出结果在下方终端，上方调试面板，点击最右边的 橙色方框 停止程序运行">
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar1_huf7d6fe320a72c8248342bbe53f23fca6_562069_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">NcPhoton</a></h1>
+            <h2 class="site-description">做了一点微小的工作</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/categories/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                
+                <span>Categories</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#下载编辑器vscode">下载编辑器VScode</a></li>
+        <li><a href="#下载编译器mingw并解压">下载编译器MinGW并解压</a></li>
+        <li><a href="#将mingw添加至环境变量">将MinGW添加至环境变量</a></li>
+        <li><a href="#配置vscode插件">配置VScode插件</a></li>
+        <li><a href="#运行代码">运行代码</a></li>
+        <li><a href="#调整和优化">调整和优化</a></li>
+        <li><a href="#提示">提示</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" >
+                工具使用
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/vscode%E9%85%8D%E7%BD%AEc-c-%E7%8E%AF%E5%A2%83/">VSCode配置C-C&#43;&#43;环境</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 05, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <blockquote>
+<p>转载自：<a class="link" href="https://www.bilibili.com/video/BV1Cu411y7vT/?spm_id_from=333.880.my_history.page.click&amp;vd_source=1abbb8d283902a924ee10e192a4f108b"  target="_blank" rel="noopener"
+    >【教程】VScode中配置C语言/C++运行环境_哔哩哔哩_bilibili</a></p>
+</blockquote>
+<h3 id="下载编辑器vscode">下载编辑器VScode</h3>
+<ul>
+<li>
+<p>官网：https://code.visualstudio.com/</p>
+<p><img src="https://cdn.jsdelivr.net/gh/sxfinn/CDN/img/202212021529307.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="下载指引"
+	
+	
+></p>
+<!-- raw HTML omitted -->
+</li>
+<li>
+<p>安装VScode（建议附加任务全部勾选）</p>
+<!-- raw HTML omitted -->
+</li>
+</ul>
+<h3 id="下载编译器mingw并解压">下载编译器MinGW并解压</h3>
+<ul>
+<li>
+<p>官网页面：https://www.mingw-w64.org/</p>
+</li>
+<li>
+<p>下载页面：https://sourceforge.net/projects/mingw-w64/files/ -内置了iconv工具</p>
+</li>
+<li>
+<p>非官方下载页面：<a class="link" href="https://nuwen.net/mingw.html"  target="_blank" rel="noopener"
+    >MinGW Distro - nuwen.net</a> -此版本未内置iconv工具</p>
+<blockquote>
+<p>你可以进入官网自行寻找</p>
+<p>你也可以直接点击为你找好的下载页面</p>
+</blockquote>
+</li>
+<li>
+<p>下载页面中选择 <code>x86_64-win32-seh</code> 下载</p>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>如果你因为网络环境限制无法下载</p>
+<p>不限速下载，请笑纳^-^：https://wwn.lanzouh.com/iLOip031ku6b 密码:1234</p>
+</blockquote>
+</li>
+<li>
+<p>在C盘中解压文件</p>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>理论上你可以在任何地方解压，但注意路径不能包含中文，至于特殊字符请自行测试</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="将mingw添加至环境变量">将MinGW添加至环境变量</h3>
+<ul>
+<li>
+<p>进入mingw64下的bin文件夹，复制当前路径，Win + i唤起系统设置，输入高级系统设置并进入，点击环境变量，选择path，编辑，新建，粘贴路径，按下三个确定</p>
+<!-- raw HTML omitted -->
+</li>
+</ul>
+<h3 id="配置vscode插件">配置VScode插件</h3>
+<ul>
+<li>
+<p>打开VScode安装插件 <code>Chinese</code> 和 <code>C/C++</code> ，等待安装完毕后重启VScode</p>
+<!-- raw HTML omitted -->
+</li>
+<li>
+<p>切换C/C++插件至 <code>1.8.4</code> 版本（非必要，不过对于小白来说更方便，此版本运行即自动配置）</p>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>因最新版本不会自动生成launch.json文件，给后续优化带来不便，故退回旧版本。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="运行代码">运行代码</h3>
+<ul>
+<li>
+<p>新建文件夹，修改为英文名称并进入，右键 <code>通过Code打开</code> 若在安装时未勾选相关选项，可能没有这个选项，请自行在VScode内操作打开文件夹</p>
+</li>
+<li>
+<p>新建一个文件，英文命名且扩展名为 <code>.c</code></p>
+</li>
+<li>
+<p>编写相关代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Hello World!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;你好世界！</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">system</span><span class="p">(</span><span class="s">&#34;pause&#34;</span><span class="p">);</span>    <span class="c1">// 防止运行后自动退出，需头文件stdlib.h
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>VScode菜单栏，点击运行，启动调试，稍等程序运行，输出结果在下方终端，上方调试面板，点击最右边的 <!-- raw HTML omitted --><code>橙色方框</code> <!-- raw HTML omitted -->停止程序运行</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="调整和优化">调整和优化</h3>
+<blockquote>
+<p>请根据自己的需要进行优化</p>
+<p>代码运行后 <code>.vscode</code> 文件夹会自动生成在你的源文件目录下</p>
+<p><code>.vscode</code> 文件夹下的 <code>task.json</code> 和 <code>launch.json</code> 用来控制程序的运行和调试</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>将程序运行在外部控制台</strong>【墙裂推荐】</p>
+<ul>
+<li>
+<p>打开<code>.vscode</code> 文件夹下的 <code>launch.json</code> 文件，找到 <code>&quot;externalConsole&quot;: false,</code> 将 <code>false</code> 改为 <code>true</code> 并保存</p>
+<p><img src="https://cdn.jsdelivr.net/gh/sxfinn/CDN/img/202212021531043.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>解决中文乱码问题</strong>【墙裂推荐】| <a class="link" href="https://www.cnblogs.com/stu-jyj3621/p/12815080.html"  target="_blank" rel="noopener"
+    >VSCode中解决终端的中文乱码问题 - 我等着你 - 博客园</a></p>
+<p>中文乱码是由于VSC的默认编码格式是UTF-8，那么编译后程序的字符串的保存方式仍然为UTF-8，而CMD的编码方式为GBK。GBK的编码中文和符号是双字节，字符和整型是单字节。utf-8的中文和符号是三字节，字符和整型是单字节，二者的中文字符并不兼容。为解决这个问题，我们需要将二者的编码方式设为相同编码。方法多种多样，最方便、副作用最小的是下面将要介绍的方法：</p>
+<p>先了解一下gcc编译选项：</p>
+<p><code>-finput-charset</code>:输入字符集设置(需要和源文件编码一致)，告诉编译器以什么样的编码形式读入源文件中的字符串。</p>
+<p><code>-fexec-charset</code>:执行字符集设置(需要设置为当前运行环境支持的编码),告诉<a class="link" href="https://so.csdn.net/so/search?q=%e7%bc%96%e8%af%91%e5%99%a8&amp;spm=1001.2101.3001.7020"  target="_blank" rel="noopener"
+    >编译器</a>在内存中以什么样的编码形式保存字符串。</p>
+<p><code>-fwide-exec-charset</code>:宽字符执行编码(在windows下应设置为utf-16LE)，告诉编译器在内存中以什么样的编码形式保存宽字符串。</p>
+<p>修改程序编码方式为GBK：</p>
+<ul>
+<li>
+<p>打开<code>.vscode</code> 文件夹下的 <code>task.json</code> 文件，找到 <code>&quot;${fileDirname}\\${fileBasenameNoExtension}.exe&quot;</code> 在后面加上英文 <code>逗号</code> 然后回车到下一行，粘贴下面文本 <code>&quot;-fexec-charset=GBK&quot;</code> 并保存</p>
+<p><img src="https://cdn.jsdelivr.net/gh/sxfinn/CDN/img/202212021531599.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+<p>编译时用<code>&quot;-fexec-charset=GBK&quot;</code>这个参数（目前的配置是有的），生成的程序的字符串就是GBK编码的，源文件编码格式不会受到影响，仍是UTF-8。</p>
+<p><strong>注意</strong>：加入此参数需要依赖你下载的mingw内置iconv工具！！！</p>
+<p>iconv是一个计算机程序以及一套应用程序编程接口的名称。 作为应用程序的iconv采用命令行界面，允许将某种特定编码的文件转换为另一种编码。</p>
+<p>若缺少iconv工具使用了此参数，会出现如下<strong>报错</strong>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">no iconv implementation, cannot convert from utf-8 to gbk
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p><strong>收纳生成的 <code>exe</code> 可执行文件</strong>【可选】</p>
+<ul>
+<li>
+<p>打开<code>.vscode</code> 文件夹下的 <code>task.json</code> 文件，找到 <code>&quot;${fileDirname}\\${fileBasenameNoExtension}.exe&quot;</code></p>
+</li>
+<li>
+<p>修改成 <code>&quot;${fileDirname}\\coin\\${fileBasenameNoExtension}.exe&quot;</code> 并保存，同理，<code>launch.json</code> 下也有相同的字段，需要你修改</p>
+</li>
+<li>
+<p>在源文件同目录下新建 <code>coin</code> 文件夹，程序运行后，可执行文件将会生成在里面（其中 <code>coin</code> 可修改成你喜欢的英文名字）</p>
+<blockquote>
+<p>这样 <code>.c</code> 文件一多起来的时候，就不会出现 <code>.exe</code> 和 <code>.c</code> 相互穿插在目录中^-^</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/sxfinn/CDN/img/202212021531435.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="img"
+	
+	
+></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>​		以上优化C++的项目同理，不再演示。</p>
+<h3 id="提示">提示</h3>
+<ul>
+<li>若源代码文件夹含有中文路径，将会无法编译程序。</li>
+<li>若你的Windows用户名使用了中文，可能无法运行。</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">环境搭建</a>
+        
+            <a href="/tags/cpp/">cpp</a>
+        
+            <a href="/tags/c/">c</a>
+        
+            <a href="/tags/vscode/">VSCode</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2023 NcPhoton
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

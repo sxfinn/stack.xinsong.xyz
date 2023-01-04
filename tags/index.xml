@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tags on NcPhoton</title>
+        <link>https://stack.xinsong.xyz/tags/</link>
+        <description>Recent content in Tags on NcPhoton</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 05 Dec 2022 17:11:58 +0000</lastBuildDate><atom:link href="https://stack.xinsong.xyz/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>cpp</title>
+        <link>https://stack.xinsong.xyz/tags/cpp/</link>
+        <pubDate>Mon, 05 Dec 2022 17:11:58 +0000</pubDate>
+        
+        <guid>https://stack.xinsong.xyz/tags/cpp/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>c</title>
+        <link>https://stack.xinsong.xyz/tags/c/</link>
+        <pubDate>Mon, 05 Dec 2022 17:08:35 +0000</pubDate>
+        
+        <guid>https://stack.xinsong.xyz/tags/c/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>VSCode</title>
+        <link>https://stack.xinsong.xyz/tags/vscode/</link>
+        <pubDate>Mon, 05 Dec 2022 17:08:35 +0000</pubDate>
+        
+        <guid>https://stack.xinsong.xyz/tags/vscode/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>环境搭建</title>
+        <link>https://stack.xinsong.xyz/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+        <pubDate>Mon, 05 Dec 2022 17:08:35 +0000</pubDate>
+        
+        <guid>https://stack.xinsong.xyz/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>blog</title>
+        <link>https://stack.xinsong.xyz/tags/blog/</link>
+        <pubDate>Mon, 05 Dec 2022 16:46:59 +0000</pubDate>
+        
+        <guid>https://stack.xinsong.xyz/tags/blog/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>hexo</title>
+        <link>https://stack.xinsong.xyz/tags/hexo/</link>
+        <pubDate>Mon, 05 Dec 2022 16:46:59 +0000</pubDate>
+        
+        <guid>https://stack.xinsong.xyz/tags/hexo/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>inline</title>
+        <link>https://stack.xinsong.xyz/tags/inline/</link>
+        <pubDate>Mon, 05 Dec 2022 16:25:27 +0000</pubDate>
+        
+        <guid>https://stack.xinsong.xyz/tags/inline/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>VSCode on NcPhoton</title>
+        <link>https://stack.xinsong.xyz/tags/vscode/</link>
+        <description>Recent content in VSCode on NcPhoton</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 05 Dec 2022 17:08:35 +0000</lastBuildDate><atom:link href="https://stack.xinsong.xyz/tags/vscode/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>VSCode配置C-C&#43;&#43;环境</title>
+        <link>https://stack.xinsong.xyz/p/vscode%E9%85%8D%E7%BD%AEc-c-%E7%8E%AF%E5%A2%83/</link>
+        <pubDate>Mon, 05 Dec 2022 17:08:35 +0000</pubDate>
+        
+        <guid>https://stack.xinsong.xyz/p/vscode%E9%85%8D%E7%BD%AEc-c-%E7%8E%AF%E5%A2%83/</guid>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;转载自：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1Cu411y7vT/?spm_id_from=333.880.my_history.page.click&amp;amp;vd_source=1abbb8d283902a924ee10e192a4f108b&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【教程】VScode中配置C语言/C++运行环境_哔哩哔哩_bilibili&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;下载编辑器vscode&#34;&gt;下载编辑器VScode&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;官网：https://code.visualstudio.com/&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/sxfinn/CDN/img/202212021529307.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;下载指引&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装VScode（建议附加任务全部勾选）&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;下载编译器mingw并解压&#34;&gt;下载编译器MinGW并解压&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;官网页面：https://www.mingw-w64.org/&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下载页面：https://sourceforge.net/projects/mingw-w64/files/ -内置了iconv工具&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;非官方下载页面：&lt;a class=&#34;link&#34; href=&#34;https://nuwen.net/mingw.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MinGW Distro - nuwen.net&lt;/a&gt; -此版本未内置iconv工具&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;你可以进入官网自行寻找&lt;/p&gt;
+&lt;p&gt;你也可以直接点击为你找好的下载页面&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下载页面中选择 &lt;code&gt;x86_64-win32-seh&lt;/code&gt; 下载&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果你因为网络环境限制无法下载&lt;/p&gt;
+&lt;p&gt;不限速下载，请笑纳^-^：https://wwn.lanzouh.com/iLOip031ku6b 密码:1234&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在C盘中解压文件&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;blockquote&gt;
+&lt;p&gt;理论上你可以在任何地方解压，但注意路径不能包含中文，至于特殊字符请自行测试&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;将mingw添加至环境变量&#34;&gt;将MinGW添加至环境变量&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;进入mingw64下的bin文件夹，复制当前路径，Win + i唤起系统设置，输入高级系统设置并进入，点击环境变量，选择path，编辑，新建，粘贴路径，按下三个确定&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;配置vscode插件&#34;&gt;配置VScode插件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;打开VScode安装插件 &lt;code&gt;Chinese&lt;/code&gt; 和 &lt;code&gt;C/C++&lt;/code&gt; ，等待安装完毕后重启VScode&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;切换C/C++插件至 &lt;code&gt;1.8.4&lt;/code&gt; 版本（非必要，不过对于小白来说更方便，此版本运行即自动配置）&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;blockquote&gt;
+&lt;p&gt;因最新版本不会自动生成launch.json文件，给后续优化带来不便，故退回旧版本。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;运行代码&#34;&gt;运行代码&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;新建文件夹，修改为英文名称并进入，右键 &lt;code&gt;通过Code打开&lt;/code&gt; 若在安装时未勾选相关选项，可能没有这个选项，请自行在VScode内操作打开文件夹&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;新建一个文件，英文命名且扩展名为 &lt;code&gt;.c&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编写相关代码&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdlib.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Hello World!&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;你好世界！&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;system&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;pause&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// 防止运行后自动退出，需头文件stdlib.h
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;VScode菜单栏，点击运行，启动调试，稍等程序运行，输出结果在下方终端，上方调试面板，点击最右边的 &lt;!-- raw HTML omitted --&gt;&lt;code&gt;橙色方框&lt;/code&gt; &lt;!-- raw HTML omitted --&gt;停止程序运行&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id=&#34;调整和优化&#34;&gt;调整和优化&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;请根据自己的需要进行优化&lt;/p&gt;
+&lt;p&gt;代码运行后 &lt;code&gt;.vscode&lt;/code&gt; 文件夹会自动生成在你的源文件目录下&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.vscode&lt;/code&gt; 文件夹下的 &lt;code&gt;task.json&lt;/code&gt; 和 &lt;code&gt;launch.json&lt;/code&gt; 用来控制程序的运行和调试&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;将程序运行在外部控制台&lt;/strong&gt;【墙裂推荐】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;打开&lt;code&gt;.vscode&lt;/code&gt; 文件夹下的 &lt;code&gt;launch.json&lt;/code&gt; 文件，找到 &lt;code&gt;&amp;quot;externalConsole&amp;quot;: false,&lt;/code&gt; 将 &lt;code&gt;false&lt;/code&gt; 改为 &lt;code&gt;true&lt;/code&gt; 并保存&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/sxfinn/CDN/img/202212021531043.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;解决中文乱码问题&lt;/strong&gt;【墙裂推荐】| &lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/stu-jyj3621/p/12815080.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;VSCode中解决终端的中文乱码问题 - 我等着你 - 博客园&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;中文乱码是由于VSC的默认编码格式是UTF-8，那么编译后程序的字符串的保存方式仍然为UTF-8，而CMD的编码方式为GBK。GBK的编码中文和符号是双字节，字符和整型是单字节。utf-8的中文和符号是三字节，字符和整型是单字节，二者的中文字符并不兼容。为解决这个问题，我们需要将二者的编码方式设为相同编码。方法多种多样，最方便、副作用最小的是下面将要介绍的方法：&lt;/p&gt;
+&lt;p&gt;先了解一下gcc编译选项：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-finput-charset&lt;/code&gt;:输入字符集设置(需要和源文件编码一致)，告诉编译器以什么样的编码形式读入源文件中的字符串。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-fexec-charset&lt;/code&gt;:执行字符集设置(需要设置为当前运行环境支持的编码),告诉&lt;a class=&#34;link&#34; href=&#34;https://so.csdn.net/so/search?q=%e7%bc%96%e8%af%91%e5%99%a8&amp;amp;spm=1001.2101.3001.7020&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;编译器&lt;/a&gt;在内存中以什么样的编码形式保存字符串。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-fwide-exec-charset&lt;/code&gt;:宽字符执行编码(在windows下应设置为utf-16LE)，告诉编译器在内存中以什么样的编码形式保存宽字符串。&lt;/p&gt;
+&lt;p&gt;修改程序编码方式为GBK：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;打开&lt;code&gt;.vscode&lt;/code&gt; 文件夹下的 &lt;code&gt;task.json&lt;/code&gt; 文件，找到 &lt;code&gt;&amp;quot;${fileDirname}\\${fileBasenameNoExtension}.exe&amp;quot;&lt;/code&gt; 在后面加上英文 &lt;code&gt;逗号&lt;/code&gt; 然后回车到下一行，粘贴下面文本 &lt;code&gt;&amp;quot;-fexec-charset=GBK&amp;quot;&lt;/code&gt; 并保存&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/sxfinn/CDN/img/202212021531599.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;编译时用&lt;code&gt;&amp;quot;-fexec-charset=GBK&amp;quot;&lt;/code&gt;这个参数（目前的配置是有的），生成的程序的字符串就是GBK编码的，源文件编码格式不会受到影响，仍是UTF-8。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：加入此参数需要依赖你下载的mingw内置iconv工具！！！&lt;/p&gt;
+&lt;p&gt;iconv是一个计算机程序以及一套应用程序编程接口的名称。 作为应用程序的iconv采用命令行界面，允许将某种特定编码的文件转换为另一种编码。&lt;/p&gt;
+&lt;p&gt;若缺少iconv工具使用了此参数，会出现如下&lt;strong&gt;报错&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;no iconv implementation, cannot convert from utf-8 to gbk
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;收纳生成的 &lt;code&gt;exe&lt;/code&gt; 可执行文件&lt;/strong&gt;【可选】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;打开&lt;code&gt;.vscode&lt;/code&gt; 文件夹下的 &lt;code&gt;task.json&lt;/code&gt; 文件，找到 &lt;code&gt;&amp;quot;${fileDirname}\\${fileBasenameNoExtension}.exe&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;修改成 &lt;code&gt;&amp;quot;${fileDirname}\\coin\\${fileBasenameNoExtension}.exe&amp;quot;&lt;/code&gt; 并保存，同理，&lt;code&gt;launch.json&lt;/code&gt; 下也有相同的字段，需要你修改&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在源文件同目录下新建 &lt;code&gt;coin&lt;/code&gt; 文件夹，程序运行后，可执行文件将会生成在里面（其中 &lt;code&gt;coin&lt;/code&gt; 可修改成你喜欢的英文名字）&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这样 &lt;code&gt;.c&lt;/code&gt; 文件一多起来的时候，就不会出现 &lt;code&gt;.exe&lt;/code&gt; 和 &lt;code&gt;.c&lt;/code&gt; 相互穿插在目录中^-^&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/sxfinn/CDN/img/202212021531435.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​		以上优化C++的项目同理，不再演示。&lt;/p&gt;
+&lt;h3 id=&#34;提示&#34;&gt;提示&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;若源代码文件夹含有中文路径，将会无法编译程序。&lt;/li&gt;
+&lt;li&gt;若你的Windows用户名使用了中文，可能无法运行。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
