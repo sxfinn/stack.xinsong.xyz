@@ -3,18 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://stack.xinsong.xyz/</loc>
-    <lastmod>2022-12-07T14:16:43+08:00</lastmod>
-  </url><url>
-    <loc>https://stack.xinsong.xyz/post/</loc>
-    <lastmod>2022-12-07T14:16:43+08:00</lastmod>
-  </url><url>
-    <loc>https://stack.xinsong.xyz/p/test/</loc>
-    <lastmod>2022-12-07T14:16:43+08:00</lastmod>
-  </url><url>
-    <loc>https://stack.xinsong.xyz/p/c-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E4%B8%8A/</loc>
-    <lastmod>2022-12-05T17:11:58+00:00</lastmod>
+    <lastmod>2023-01-04T03:08:00+00:00</lastmod>
   </url><url>
     <loc>https://stack.xinsong.xyz/categories/</loc>
+    <lastmod>2023-01-04T03:08:00+00:00</lastmod>
+  </url><url>
+    <loc>https://stack.xinsong.xyz/post/</loc>
+    <lastmod>2023-01-04T03:08:00+00:00</lastmod>
+  </url><url>
+    <loc>https://stack.xinsong.xyz/categories/test/</loc>
+    <lastmod>2023-01-04T03:08:00+00:00</lastmod>
+  </url><url>
+    <loc>https://stack.xinsong.xyz/p/%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98/</loc>
+    <lastmod>2023-01-04T03:08:00+00:00</lastmod>
+  </url><url>
+    <loc>https://stack.xinsong.xyz/p/c-%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E4%B8%8A/</loc>
     <lastmod>2022-12-05T17:11:58+00:00</lastmod>
   </url><url>
     <loc>https://stack.xinsong.xyz/tags/cpp/</loc>
@@ -74,12 +77,14 @@
     <loc>https://stack.xinsong.xyz/about/</loc>
     <lastmod>2020-10-09T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://stack.xinsong.xyz/live2d-widget/readme/</loc>
+  </url><url>
     <loc>https://stack.xinsong.xyz/p/hello-world/</loc>
   </url><url>
     <loc>https://stack.xinsong.xyz/links/</loc>
   </url><url>
-    <loc>https://stack.xinsong.xyz/search/</loc>
+    <loc>https://stack.xinsong.xyz/live2d-widget/</loc>
   </url><url>
-    <loc>https://stack.xinsong.xyz/categories/test/</loc>
+    <loc>https://stack.xinsong.xyz/search/</loc>
   </url>
 </urlset>
